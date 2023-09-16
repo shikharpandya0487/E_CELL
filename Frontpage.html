@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FrontPage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    
+
+    <style
+      src="https://kit.fontawesome.com/a79a86583f.js"
+      crossorigin="anonymous"
+    >
+     /* linking a website for using icons */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: rgb(251, 235, 235);
+      }
+      .wrapper {
+        height: 100vh;
+        width: 100vw;
+      }
+      /* The second wrapper of code  */
+      .wrapper2{
+        height:80%;
+        width:80%;
+        padding:10px;
+        margin:0 auto;
+      }
+      /* navigation bar */
+      .nav {
+        border-bottom: 2px solid rgb(191, 188, 188);
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        height: 4em;
+        margin-bottom: 25px;
+      }
+      /* all the links */
+      .content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 8px;
+      }
+      .navi {
+        border: transparent;
+        margin-right: 10px;
+      }
+      .content_body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+     
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .main {
+        height: 20em;
+        width: 20rem;
+        border: 3px solid black;
+        border-radius: 20px;
+      }
+      .btn {
+        width: 2em;
+        height:1.1em;
+        scale: 0;
+      }
+      #colorbox {
+        background-image: linear-gradient(135deg, rgb(5, 0, 142), purple);
+      }
+
+      #image {
+        background-image: url(./Images/E-cell.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      /* gridmap */
+      #gridmap {
+        display: grid;
+        padding: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 5px;
+        background-color: rgb(200, 198, 198);
+      }
+      /* box's colors */
+      .box {
+        border: 1px transparent;
+        border-radius: 20px;
+        /* background-image: linear-gradient(
+          135deg,
+          rgb(206, 109, 35),
+          rgb(223, 44, 12)
+        ); */
+        background-color: blue;
+      }
+/* using media queries for responsiveness */
+      @media (max-width: 872px){
+          
+          .content {         
+              display:flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              scale:0;
+              align-items: space-evenly;
+            }
+            .btn {
+              width: 1.2em;
+              text-align: center;
+              scale: 1;
+            }
+
+
+        .nav{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-bottom:10px;
+            align-items: space-evenly;
+          
+        }
+
+        .content_body {
+          display:flex;
+          flex-direction:column-reverse;
+          /* flex-wrap: wrap; */
+          justify-content: space-evenly;
+          align-items:center;
+          gap: 20px;
+        }
+      }
+
+
+      @media (min-width:873px) and (max-width:1200px)
+      {
+        .btn{
+            scale:0;
+        }
+        .navi{
+            scale:1;
+        }
+
+        
+        
+        .content_body{
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap:30px;
+        }
+        #colorbox{
+            width:100%;
+        }
+        #image{
+            width:20em;
+        }
+        #gridmap{
+            width:20em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper2">
+        <div class="nav">
+          <div class="content">
+            <div id="home" class="navi">
+              <a href="../Page2/PersonalPage.html">Home</a>
+            </div>
+            <div id="grid" class="navi"><a href="#gridmap">Grid</a></div>
+            <div id="linkedin" class="navi">
+              <a href="https://www.linkedin.com/in/shikhar-pandya-5712a4263/">Linkedin</a>
+            </div>
+           
+          </div>
+          <div class="btn"><i class="fa-solid fa-bars"></i></div>
+        </div>
+
+        <div class="content_body">
+          <div id="colorbox" class="main"></div>
+          <div id="image" class="main"></div>
+          <div id="gridmap" class="main">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box" id="last"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="Frontpage.js"></script>
+  </body>
+</html>
