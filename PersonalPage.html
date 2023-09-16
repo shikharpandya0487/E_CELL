@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&display=swap");
+
+      * {
+        margin: 0px;
+        box-sizing: border-box;
+        padding: 0%;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+      .wrapper {
+        height: 100vh;
+        overflow-x: hidden;
+      }
+      .container {
+        width: 1200px;
+        height:100vh;
+        margin: 0 auto;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+      }
+      .logo {
+        width: 3em;
+      }
+      .logocontainer {
+        display: flex;
+        align-items: center;
+
+        justify-content: baseline;
+      }
+      .navitems {
+        display: flex;
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      .logoText {
+        font-size: 30px;
+        margin-left: 0.2rem;
+        font-weight: bold;
+      }
+
+      .navitems a {
+        text-decoration: none;
+        font-size: 2rem;
+        color: rgb(84, 77, 77);
+      }
+      .navitems a:hover {
+        cursor: pointer;
+        font-weight: bolder;
+        transition: all 0.5s;
+      }
+      .herosec {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        gap: 6rem;
+        margin: 4px auto;
+        padding: 0 1rem;
+      }
+      .heroleft {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        width:39em;
+      }
+      .faded {
+        position: absolute;
+        bottom: -45%;
+        left: 1%;
+        font-size: 7em;
+        user-select: none;
+        font-weight: bold;
+        color: rgb(190, 181, 181);
+        transition: all 2s;
+      }
+      .herosecHeading {
+        font-size: 2.2rem;
+        font-weight: bold;
+      }
+      .HeroSecSub span {
+        color: purple;
+        font-size: 3rem;
+        font-weight: 800;
+      }
+      .btn{
+    background-color: rgb(202, 239, 127);
+    width: fit-content;
+    color: rgb(12, 1, 1);
+    padding: 0.8rem 2.3rem;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    border: solid 3px transparent;
+    position: relative;
+    z-index: 1;
+  }
+  .btn::before {
+    content: "";
+    position: absolute;
+    background-color: #f13636;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+  }
+  .btn:hover::before {
+    transform: scaleX(1);
+  }
+  .btn:hover {
+    border: solid 3px var(--bgOrange);
+    color: black;
+    box-shadow: 0px 1px 10px black;
+  }
+
+
+      .HeroSecSub {
+        line-height: 45px;
+      }
+      .herosectiondes {
+        font-weight: 500;
+        margin-top: 1rem;
+        width: 70%;
+      }
+
+      .heroright {
+        position: relative;
+       
+      }
+      .absolute {
+        position: absolute;
+      }
+
+      .userimage {
+        filter: grayscale(1);
+        padding: 2.5rem;
+        transition: all 1s;
+        
+        animation: scaleImage 5s linear infinite;
+      }
+      .userimage img {
+        z-index: -1;
+        height:20em;
+        width:20em;
+      }
+      @keyframes scaleImage {
+        0% {
+          filter: grayscale(1);
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+          filter: grayscale(0);
+          box-shadow: 3px 4px 5px black;
+        }
+        100% {
+          filter: grayscale(1);
+          transform: scale(1);
+        }
+      }
+      .icon-dots {
+        z-index: 1;
+        bottom: -1rem;
+        right: 0.4rem;
+        animation-name: Dots;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+      @keyframes Dots {
+        0% {
+          transform: translateY(0px);
+        }
+        25% {
+          transform: translateY(-7.5px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        75% {
+          transform: translateY(7.5px);
+        }
+        100% {
+          transform: translateY(15px);
+        }
+      }
+
+      .icon-cube {
+        z-index: 1;
+        top: 1rem;
+        right: 0.4rem;
+        animation-name: Cube;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes Cube {
+        0% {
+          transform: rotateY(0deg);
+        }
+        25% {
+          transform: rotateY(90deg);
+        }
+        50% {
+          transform: rotateY(180deg);
+        }
+        75% {
+          transform: rotateY(270deg);
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .icon-circle {
+    z-index: 1;
+    bottom: 1rem;
+    left: 0.4rem;
+    animation-name: Circle;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes Circle {
+    0% {
+        transform: rotateY(0deg);
+    }
+    25% {
+        transform: rotateY(90deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    75% {
+        transform: rotateY(270deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.icon-zigzags {
+    z-index: 1;
+    top: 1rem;
+    left: 0.4rem;
+    animation-name: zigzags;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes zigzags {
+    0% {
+          transform: translateY(0px);
+        }
+        25% {
+          transform: translateY(-7.5px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        75% {
+          transform: translateY(7.5px);
+        }
+        100% {
+          transform: translateY(15px);
+        }
+}
+
+.icon-plus {
+    z-index: 1;
+    top: 0rem;
+    left: 15rem;
+    animation-name:plus;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes plus{
+    0% {
+        transform: rotateX(0deg);
+    }
+    25% {
+        transform: rotatex(90deg);
+    }
+    50% {
+        transform: rotatex(180deg);
+    }
+    75% {
+        transform: rotatex(270deg);
+    }
+    100% {
+        transform: rotatex(360deg);
+    }
+}
+
+.projectsection{
+background-color: rgb(190, 181, 181);
+margin:3rem;
+}
+
+.projectheading{
+  color:orangered;
+  font-weight: bold;
+  font-size:60px;
+  text-align: center;  
+}
+
+.projectcontainer{
+  max-width:1200px;
+  display:flex;
+  flex-direction: column;
+  margin:0 auto;
+  padding:2rem;
+  gap:120px;
+}
+
+.projectcard{
+  width:90%;
+  height:600px;
+   position:relative;
+   z-index: 0;
+   box-shadow: 0px 0px 12px black;
+
+}
+
+.projectcard::after{
+  content:"";
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 0;
+  bottom:0;
+  background-color: #1f1f1f9a;
+} 
+.projectcard::before{
+  background-image:linear-gradient(45deg,#5767b4,#3a4dadbe);
+  content:"";
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 1;
+  bottom:0;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:all 0.9s;
+}
+
+.projectcard:hover::before{
+  transform:scaleX(1);  
+  z-index:1;
+}
+
+.projectnumber
+{
+  position: absolute;
+  font-size: 18em;
+  color:white;
+  font-weight:800;
+ z-index: 2;
+  
+
+  
+}
+#project1{
+  background-image: linear-gradient(135deg,purple,orangered);
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+
+.projectcontent{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+  margin:0 auto;
+  color:white;
+  padding:2em;
+  bottom:20%;
+  z-index: 6;
+  transition: all 0.7;  
+}
+.skills{
+     display:flex;
+     width:60%;
+     flex-wrap: wrap;
+     gap:10px;
+     transition:all 0.7s;
+}
+.super{
+  display:flex;
+  justify-content:left;
+  gap:3rem;
+   
+}
+.links{
+  color:white;
+}
+
+.projectskills{
+  width:40px;
+}
+.tint{
+  font-size: 4em;
+  color:white;
+  font-weight: bold;
+  font-style: italic;
+}
+.projectnumberleft{
+
+   transform:translateX(575px);
+   font-size: 232px;
+}
+.text{
+    text-decoration: none;
+    color:rgb(83, 9, 83);
+    font-weight: bold;
+    font-size:20px;
+}
+
+    </style>
+  </head>
+
+  <body>.
+    <div class="wrapper">
+      <div class="container">
+        <div class="navbar">
+          <div class="logocontainer">
+            <img src="./S.svg" alt="" class="logo" />
+            <div class="logoText">hikhar Pandya</div>
+          </div>
+
+          <div class="navitems">
+            <div class="hello"><a href="../Page1.html/Frontpage.html">Home</a></div>
+            <div><a href="#projects">Projects</a></div>
+            <div><a href="#Skills">Skills</a></div>
+            <div><a href="#contact">Contact Me</a></div>
+          </div>
+        </div>
+        
+        <div class="herosec">
+          <div class="heroleft">
+            <div class="herosecHeading">Hi!I'm Shikhar Pandya</div>
+
+            <div class="herosecHeading HeroSecSub">
+              I am a <span class="role"></span>
+            </div>
+
+
+          <div class="herosectiondis">
+
+             Registration No. 20223243 <br>
+             Branch: CSE <br>
+
+          </div>
+
+          <div class="btn" ><a href="CV.txt" id="btn1" download="CV.txt" class="text">Download My CV</a></div>
+
+          <div class="faded">Shikhar Pandya</div>
+          <div class="btn"><a href="https://www.instagram.com/accounts/login/" class="text">Insta Handle</a></div>
+        </div>
+
+        <div class="heroright">
+          <div class="absolute icons icon-dots">
+            <img src="../images/userAsset/dots.png" alt="" />
+          </div>
+          <div class="absolute icons icon-cube">
+            <img src="../images/userAsset/cube.png" alt="" />
+          </div>
+          <div class="absolute icons icon-circle">
+            <img src="../images/userAsset/circle.png" alt="" />
+          </div>
+          <div class="absolute icons icon-zigzags">
+            <img src="../images/userAsset/zigzags.png" alt="" />
+          </div>
+          <div class="absolute icons icon-plus">
+            <img src="../images/userAsset/plus.png" alt="" />
+          </div>
+          <div class="userimage">
+            <img src="Shikhar.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="projectsection">
+      <h1 class="projectheading">
+        PROJECTS
+      </h1>
+
+      <div class="projectcontainer">
+        <div class="projectcard" id="project1">
+          <div class="projectnumber">
+            <div class="projectnumberleft">No.1 </div>
+          </div>
+          <div class="projectcontent">
+             <div class="skills">
+              <img src="../images/stack/HTML.png" alt="" class="projectskills">
+              <img src="../images/stack/CSS.png" alt="" class="projectskills">
+              <img src="../images/stack/Javascript.svg" alt="" class="projectskills">
+              <img src="../images/stack/NextJsCircle.png" alt="" class="projectskills">
+              <img src="../images/stack/NodeJs.svg" alt="" class="projectskills">
+              <img src="../images/stack/MongoDB.svg" alt="" class="projectskills">
+              <img src="../images/stack/Redux.svg" alt="" class="projectskills">
+              <img src="../images/stack/Vercel.svg" alt="" class="projectskills">
+              <img src="../images/stack/Tailwind.png" alt="" class="projectskills">
+              <img src="../images/stack/Express.png" alt="" class="projectskills">
+            </div>
+
+            <h2 class="tint">My Tech Stack :)</h2>
+             <div class="subhead">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti dolores, laborum ut perspiciatis numquam dolorem libero recusandae porro fugit aliquid enim repellendus vero harum, voluptatem eligendi odit vel quas. Reprehenderit
+             </div>
+             <div class="super">
+            <div class="btn">
+              Read More
+            </div>
+
+            <div class="links">
+              <i class="github">
+                 <img src="../images/stack/Github.svg" alt="">
+              </i>
+              </div>
+              <div class="links">
+              <i class="chain">
+                    <img src="../images/stack/Git.svg " alt="">
+              </i>
+              </div>
+
+              </div>
+              </div>
+              
+            </div>
+            </div>
+          </div>
+        
+    
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+   
+    <!-- Library to make the text animation running -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script
+      src="https://kit.fontawesome.com/58a810656e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="PersonalPage.js"></script>
+  </body>
+</html>
+
