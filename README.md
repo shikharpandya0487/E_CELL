@@ -1,5 +1,10 @@
 # E_CELL
 Regarding the task given by the E-cell web team
+
+Sorry for the inconvenience I have problems regarding my github which I take too much time to resolve that's why I have not made another css file 
+I won't repeat from next time.
+
+
 This project consists of :-
 1)This page 1 having two files--> Frontpage.html & FrontPage.js  
 
